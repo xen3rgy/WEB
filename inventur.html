@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
-<body class="bg-light" onload="ladeInventurTabelle()">
+<body class="bg-light" onload="initInventur()">
     <div class="d-flex">
         <nav class="sidebar p-3">
             <h5>🍴 Unsre Speis</h5>
@@ -23,6 +23,18 @@
             <div class="container-xl">
                 <h3>Bestandsabfrage</h3>
                 <p class="text-muted">Aktueller Lagerbestand mit allen verfügbaren Produkten.</p>
+                <div class="bg-card mb-3">
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="inventur-lieferant" class="form-label">Lieferant</label>
+                            <select id="inventur-lieferant" class="form-select"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inventur-produkt" class="form-label">Produkt</label>
+                            <select id="inventur-produkt" class="form-select"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="bg-card">
                     <div class="table-responsive mb-0">
                         <table class="table table-bordered table-striped text-center mb-0">
