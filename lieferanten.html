@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferantenverwaltung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-light" onload="initLieferanten()">
+    <div class="d-flex">
+        <nav class="sidebar p-3">
+            <h5>🍴 Unsre Speis</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="inventur.html" class="nav-link">Inventur</a></li>
+                <li class="nav-item"><a href="lieferanten.html" class="nav-link active">Lieferanten</a></li>
+                <li class="nav-item"><a href="produkte.html" class="nav-link">Produkte</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">🏠 Startseite</a></li>
+            </ul>
+        </nav>
+        <main class="flex-fill p-4">
+            <h3>Lieferantenverwaltung</h3>
+            <p class="text-muted">Wählen Sie einen Lieferanten aus, um dessen Details anzuzeigen und zu bearbeiten.</p>
+            <div class="row">
+                <div class="col-md-7">
+                    <label>Lieferant</label>
+                    <select id="lieferant-auswahl" class="form-select mb-3"></select>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="lieferant-id" class="form-label">ID</label>
+                            <input id="lieferant-id" class="form-control" readonly placeholder="ID">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lieferant-status" class="form-label">Status</label>
+                            <input id="lieferant-status" class="form-control" readonly placeholder="Status">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lieferant-produkte" class="form-label">Zugeordnete Produkte</label>
+                            <input id="lieferant-produkte" class="form-control" readonly placeholder="Zugeordnete Produkte">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lieferant-bestand" class="form-label">Gesamtbestand</label>
+                            <input id="lieferant-bestand" class="form-control" readonly placeholder="Gesamtbestand">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="lieferant-umsatz" class="form-label">Umsatz Gesamt</label>
+                            <input id="lieferant-umsatz" class="form-control" readonly placeholder="Umsatz Gesamt">
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-success mt-3 w-100" onclick="toggleLieferantStatus()">Aktivieren / Inaktivieren</button>
+                        <div class="mt-3">
+                        <h5>Lieferant bearbeiten</h5>
+                        <label for="edit-lieferant-name" class="form-label">Neuer Name</label>
+                        <input id="edit-lieferant-name" class="form-control mb-2" placeholder="Neuer Name">
+                        <button class="btn btn-success w-100 mb-2" onclick="bearbeiteLieferant()">Speichern</button>
+                        <button class="btn btn-outline-danger w-100" onclick="loescheLieferant()">Lieferant löschen</button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h5>Neuen Lieferanten anlegen</h5>
+                    <label for="neu-lieferant-name" class="form-label">Lieferantenname</label>
+                    <input id="neu-lieferant-name" class="form-control mb-2" placeholder="Lieferantenname">
+                    <label for="neu-lieferant-pw" class="form-label">Kennwort</label>
+                    <input id="neu-lieferant-pw" class="form-control mb-2" type="password" placeholder="Kennwort">
+                    <button class="btn btn-success w-100" onclick="neuerLieferant()">Bestätigen</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
