@@ -1,46 +1,88 @@
 
+:root {
+    --primary: #2e7d32;
+    --primary-dark: #27642a;
+    --sidebar-bg: #343a40;
+    --background: #f3f4f6;
+}
+
 body {
-    background-color: #f5f8fa;
+    background-color: var(--background);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
+
 nav.sidebar {
     width: 220px;
-    background-color: #343a40;
-    color: white;
+    background-color: var(--sidebar-bg);
+    color: #fff;
     min-height: 100vh;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
 }
+
 nav.sidebar h5 {
-    padding-top: 20px;
+    padding: 20px 0;
     text-align: center;
     color: #ffffff;
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
 }
+
 nav.sidebar .nav-link {
     color: #dcdcdc;
     padding: 10px 15px;
+    transition: background-color .2s, color .2s;
 }
+
 nav.sidebar .nav-link.active,
 nav.sidebar .nav-link:hover {
-    background-color: #495057;
-    color: white;
+    background-color: var(--primary);
+    color: #ffffff;
 }
+
 main {
-    padding: 30px;
+    padding: 40px 60px;
 }
+
+.container-xl {
+    max-width: 1140px;
+}
+
 h3 {
-    color: #2e7d32;
+    color: var(--primary);
+    margin-bottom: 1rem;
 }
+
 .btn-custom {
-    background-color: #2e7d32;
-    color: white;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
 }
+
 .btn-custom:hover {
-    background-color: #27642a;
-    color: white;
+    background-color: var(--primary-dark);
+    color: #fff;
 }
+
+.table thead {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.table {
+    background-color: #fff;
+}
+
+.table-responsive {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+}
+
 footer {
     text-align: center;
     margin-top: 40px;
     color: #777;
+    font-size: 0.9rem;
 }
